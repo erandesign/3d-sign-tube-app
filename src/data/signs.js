@@ -1,24 +1,102 @@
-```jsx
-import { useFrame } from '@react-three/fiber'
-import { useRef, useState } from 'react'
-
-
-export default function FallingStick({ sign }) {
-const ref = useRef()
-const [y, setY] = useState(1)
-
-
-useFrame(() => {
-setY((prev) => Math.max(-1, prev - 0.05))
-ref.current.position.y = y
-})
-
-
-return (
-<mesh ref={ref} position={[0, 1, 0]}>
-<boxGeometry args={[0.15, 1.5, 0.15]} />
-<meshStandardMaterial color="#d0b37f" />
-</mesh>
-)
-}
-```
+export default [
+  { id: 1, title: "第一签 · 上吉", ancient: "云开见月，路自清明。", modern: "心稳即为路，当前努力会被看见。", category: "general" },
+  { id: 2, title: "第二签 · 中吉", ancient: "松间有风，叶落归根。", modern: "坚持基础，小变化会带来回报。", category: "career" },
+  { id: 3, title: "第三签 · 小吉", ancient: "水浅见石，步步生花。", modern: "慢一点，细节会给你惊喜。", category: "love" },
+  { id: 4, title: "第四签 · 平安", ancient: "日落而息，晨光自来。", modern: "先休整，下一步会更清晰。", category: "health" },
+  { id: 5, title: "第五签 · 凶中有吉", ancient: "荆棘之后，道旁花开。", modern: "难是转机的前奏，守住耐心。", category: "general" },
+  { id: 6, title: "第六签 · 有变", ancient: "舟小逢浪，稳桨可渡。", modern: "短期波动，别轻举妄动。", category: "money" },
+  { id: 7, title: "第七签 · 进展", ancient: "燕归巢暖，信至人安。", modern: "消息与机会正向你靠近，准备好接招。", category: "career" },
+  { id: 8, title: "第八签 · 观望", ancient: "山静石眠，水自东流。", modern: "此刻观察比行动更有价值，别急。", category: "general" },
+  { id: 9, title: "第九签 · 相逢", ancient: "花影交错，故人来问。", modern: "旧人或新缘会带来新的视角。", category: "love" },
+  { id: 10, title: "第十签 · 试炼", ancient: "竹影摇风，根更深长。", modern: "眼前的困难会锻造更坚韧的你。", category: "career" },
+  { id: 11, title: "第十一签 · 吉", ancient: "晨露为霜，东风自暖。", modern: "小事顺利，可趁势推进。", category: "general" },
+  { id: 12, title: "第十二签 · 收获", ancient: "秋稼丰登，一篓金光。", modern: "过去的努力将看到回报。", category: "money" },
+  { id: 13, title: "第十三签 · 化解", ancient: "云散见日，影亦微薄。", modern: "误会将被澄清，沟通很关键。", category: "family" },
+  { id: 14, title: "第十四签 · 机遇", ancient: "桥到水时，自有渡船。", modern: "机会会出现，但需主动上船。", category: "career" },
+  { id: 15, title: "第十五签 · 慎重", ancient: "风急勿行，舟暂靠岸。", modern: "当下不是冒进的时机，先稳后动。", category: "money" },
+  { id: 16, title: "第十六签 · 转机", ancient: "星移斗转，夜见曙光。", modern: "坚持会换来转机，别放弃。", category: "general" },
+  { id: 17, title: "第十七签 · 平和", ancient: "一池秋水，心自澄明。", modern: "内心平静比暂时的成绩更重要。", category: "health" },
+  { id: 18, title: "第十八签 · 相助", ancient: "山有路，云中有桥。", modern: "贵人或团队将给你实质性帮助。", category: "career" },
+  { id: 19, title: "第十九签 · 劝学", ancient: "书山有路，脚健为先。", modern: "持续学习能打开新的可能。", category: "study" },
+  { id: 20, title: "第二十签 · 归属", ancient: "故土灯火，心安其所。", modern: "与家人或团队的连接会带来安稳。", category: "family" },
+  { id: 21, title: "第二十一签 · 变动", ancient: "云起雷鸣，行者莫惊。", modern: "变动会来，准备方案优于焦虑。", category: "career" },
+  { id: 22, title: "第二十二签 · 节制", ancient: "酒半满杯，止口自守。", modern: "控制欲望，经济与健康都需节制。", category: "health" },
+  { id: 23, title: "第二十三签 · 爱情", ancient: "两燕并飞，巢在同枝。", modern: "感情需要同步的努力与包容。", category: "love" },
+  { id: 24, title: "第二十四签 · 试探", ancient: "暗水潜流，先探其深。", modern: "先小范围试探再全面投入。", category: "business" },
+  { id: 25, title: "第二十五签 · 规划", ancient: "先谋后动，径自通途。", modern: "制定清晰计划，执行效率更高。", category: "career" },
+  { id: 26, title: "第二十六签 · 收敛", ancient: "锦衣暂藏，静待时机。", modern: "低调更能积累能量，等待爆发期。", category: "general" },
+  { id: 27, title: "第二十七签 · 慈悲", ancient: "莲开不争，水自澄清。", modern: "以温柔待人，会收获意外支持。", category: "family" },
+  { id: 28, title: "第二十八签 · 计划", ancient: "春播秋收，日计月筹。", modern: "长期计划比短期冲刺更稳妥。", category: "money" },
+  { id: 29, title: "第二十九签 · 观察", ancient: "窗外云卷，心中自觉。", modern: "观察环境再行动，风险降低。", category: "general" },
+  { id: 30, title: "第三十签 · 聚焦", ancient: "一针见血，万事可明。", modern: "聚焦主目标，减少分散精力。", category: "career" },
+  { id: 31, title: "第三十一签 · 磨砺", ancient: "铁经千炼，刃终可利。", modern: "当下的磨砺会成为你未来的锋芒。", category: "general" },
+  { id: 32, title: "第三十二签 · 慎言", ancient: "口如关锁，心自平安。", modern: "言多必失，重要事少说多做。", category: "family" },
+  { id: 33, title: "第三十三签 · 借力", ancient: "借风行舟，不怕远航。", modern: "借助资源或合作能事半功倍。", category: "business" },
+  { id: 34, title: "第三十四签 · 适应", ancient: "柳随水曲，随缘而安。", modern: "适应变局比抵抗更有效。", category: "general" },
+  { id: 35, title: "第三十五签 · 坚守", ancient: "壁立千仞，不畏寒风。", modern: "守住底线，短期损失能换长期回报。", category: "career" },
+  { id: 36, title: "第三十六签 · 回音", ancient: "言出必应，音至方明。", modern: "所做的事会有回声，累积很重要。", category: "general" },
+  { id: 37, title: "第三十七签 · 复苏", ancient: "枯木再发，一枝春意。", modern: "低迷期将过去，逐步回升。", category: "money" },
+  { id: 38, title: "第三十八签 · 省察", ancient: "镜前检形，心亦如是。", modern: "反思能快速提升效果。", category: "study" },
+  { id: 39, title: "第三十九签 · 守候", ancient: "候鸟未归，春犹未迟。", modern: "等待合适的时机，不慌不忙。", category: "love" },
+  { id: 40, title: "第四十签 · 拓展", ancient: "越岭开路，足下生花。", modern: "跨出舒适圈，会遇到增长。", category: "career" },
+  { id: 41, title: "第四十一签 · 慎选", ancient: "择木而栖，勿随流俗。", modern: "选项目、选合伙人要慎重筛选。", category: "business" },
+  { id: 42, title: "第四十二签 · 适时", ancient: "时至则鸣，鸟自高飞。", modern: "耐心等待时机成熟再行动。", category: "general" },
+  { id: 43, title: "第四十三签 · 调整", ancient: "弓虽满弦，需缓发力。", modern: "调整节奏后再全力以赴。", category: "career" },
+  { id: 44, title: "第四十四签 · 交流", ancient: "水通鱼乐，话到情深。", modern: "有效沟通能化解误解与阻力。", category: "family" },
+  { id: 45, title: "第四十五签 · 节律", ancient: "朝夕如律，功自成章。", modern: "建立日常节律，长期复利显现。", category: "study" },
+  { id: 46, title: "第四十六签 · 退步", ancient: "退一步海阔天空。", modern: "暂时让步可能换来更大利益。", category: "business" },
+  { id: 47, title: "第四十七签 · 安顿", ancient: "枕边有书，梦自清雅。", modern: "先把基础安顿好，之后再出击。", category: "health" },
+  { id: 48, title: "第四十八签 · 斟酌", ancient: "杯中浅酌，莫饮过量。", modern: "重要决定需多方权衡再定。", category: "money" },
+  { id: 49, title: "第四十九签 · 同盟", ancient: "并肩而行，山重水复。", modern: "找志同道合的人，合作会事半功倍。", category: "business" },
+  { id: 50, title: "第五十签 · 反思", ancient: "灯下自省，夜亦有光。", modern: "静下心来审视方向，调整更高效。", category: "general" },
+  { id: 51, title: "第五十一签 · 机会", ancient: "雁过留声，机缘可待。", modern: "小机会需把握，积累口碑与资源。", category: "career" },
+  { id: 52, title: "第五十二签 · 坦诚", ancient: "心开如镜，人亦真诚。", modern: "以真诚待人，能化解许多复杂关系。", category: "family" },
+  { id: 53, title: "第五十三签 · 计划B", ancient: "地裂有路，备其方能行。", modern: "准备备用方案，面对不确定更从容。", category: "business" },
+  { id: 54, title: "第五十四签 · 安全", ancient: "锁门闭户，风雨不侵。", modern: "先保证安全与健康，再谈扩张。", category: "health" },
+  { id: 55, title: "第五十五签 · 学以致用", ancient: "学若涓流，入海成江。", modern: "把学到的立即应用，效果倍增。", category: "study" },
+  { id: 56, title: "第五十六签 · 省钱", ancient: "省一分，得十倍。", modern: "精打细算会在关键时刻帮助你。", category: "money" },
+  { id: 57, title: "第五十七签 · 赠与", ancient: "施以善心，心亦欢愉。", modern: "付出并不亏损，人脉与福报会回来。", category: "family" },
+  { id: 58, title: "第五十八签 · 试错", ancient: "试探如弈，错一子可复。", modern: "小范围试错胜过大刀阔斧的冒险。", category: "business" },
+  { id: 59, title: "第五十九签 · 休整", ancient: "云静风止，先歇方能行远。", modern: "允许自己休息，恢复后更强。", category: "health" },
+  { id: 60, title: "第六十签 · 适合", ancient: "衣合体，器合手。", modern: "选项目要与自身能力匹配，避免力不从心。", category: "career" },
+  { id: 61, title: "第六十一签 · 把握", ancient: "鳥見食時，展翅即飛。", modern: "机会来临时果断出手，效果更好。", category: "money" },
+  { id: 62, title: "第六十二签 · 诚意", ancient: "茶暖人心，話直情真。", modern: "以诚待人，许多阻碍自会消融。", category: "family" },
+  { id: 63, title: "第六十三签 · 敢试", ancient: "欲登高樓，先迈一步。", modern: "勇敢试一次，可能打开新门路。", category: "career" },
+  { id: 64, title: "第六十四签 · 节拍", ancient: "鼓点稳，舞自有章。", modern: "把握节奏比一时拼命更可持续。", category: "general" },
+  { id: 65, title: "第六十五签 · 交锋", ancient: "锋芒试露，需守亦攻。", modern: "面对竞争，既要展示也要守好底线。", category: "business" },
+  { id: 66, title: "第六十六签 · 调养", ancient: "药石养身，心亦宁静。", modern: "身体与心灵的调理同等重要。", category: "health" },
+  { id: 67, title: "第六十七签 · 观察力", ancient: "细视花蕊，知其春色。", modern: "增强观察力，常常能先察觉趋势。", category: "study" },
+  { id: 68, title: "第六十八签 · 整合", ancient: "百川合流，势自成海。", modern: "把零散资源整合，会产生更大价值。", category: "business" },
+  { id: 69, title: "第六十九签 · 诚恳", ancient: "手中有礼，心中无惧。", modern: "真诚表达你的想法，沟通更有效。", category: "family" },
+  { id: 70, title: "第七十签 · 静候", ancient: "候花开时，勿扰其芬。", modern: "等待成果成熟，再去收割。", category: "general" },
+  { id: 71, title: "第七十一签 · 快速学习", ancient: "观其形取其意，学速而不浅。", modern: "抓要点速学，实践中深化。", category: "study" },
+  { id: 72, title: "第七十二签 · 谨慎投资", ancient: "金虽诱人，灼手勿取。", modern: "投资需分散与风险控制。", category: "money" },
+  { id: 73, title: "第七十三签 · 同理", ancient: "听雨知声，体人所感。", modern: "换位思考能化解许多冲突。", category: "family" },
+  { id: 74, title: "第七十四签 · 低调", ancient: "月隐山巅，光自安然。", modern: "低调耕耘更能避免不必要的消耗。", category: "career" },
+  { id: 75, title: "第七十五签 · 专注", ancient: "一笔一划，终成华章。", modern: "专注于核心任务，产出更高质量。", category: "general" },
+  { id: 76, title: "第七十六签 · 反弹", ancient: "落叶随风，春还再临。", modern: "遭遇挫折后会有复苏的迹象。", category: "money" },
+  { id: 77, title: "第七十七签 · 认真", ancient: "细针入绣，才能成帛。", modern: "认真的态度会被看见并回报。", category: "career" },
+  { id: 78, title: "第七十八签 · 慈心", ancient: "雨润万物，非独一处。", modern: "善意的举动会在社群中扩散影响力。", category: "family" },
+  { id: 79, title: "第七十九签 · 省力", ancient: "杠杆虽小，力可倍增。", modern: "用工具与方法提升效率，比蛮干更值钱。", category: "business" },
+  { id: 80, title: "第八十签 · 试行", ancient: "先试一段，再择其优。", modern: "小范围试点，数据胜于空谈。", category: "business" },
+  { id: 81, title: "第八十一签 · 收束", ancient: "锦上添花，末节可缓。", modern: "先把主要问题解决，次要再优化。", category: "general" },
+  { id: 82, title: "第八十二签 · 自律", ancient: "晨起三宝，习以为常。", modern: "建立可持续的自律习惯，长期见效。", category: "health" },
+  { id: 83, title: "第八十三签 · 诚实", ancient: "明镜不欺，心亦清然。", modern: "诚实是长期信任的基础。", category: "family" },
+  { id: 84, title: "第八十四签 · 拆解", ancient: "难题如冰，分解则溶。", modern: "复杂问题拆小步逐一解决。", category: "study" },
+  { id: 85, title: "第八十五签 · 转移风险", ancient: "风来时树，灵活为先。", modern: "通过结构与合同分散风险。", category: "business" },
+  { id: 86, title: "第八十六签 · 深耕", ancient: "井深水甘，一掘见泉。", modern: "在细分领域深耕会形成竞争壁垒。", category: "career" },
+  { id: 87, title: "第八十七签 · 调整期待", ancient: "云勿高望，脚踏实地。", modern: "把期望与现实对齐，减少失望成本。", category: "general" },
+  { id: 88, title: "第八十八签 · 义举", ancient: "其德如山，人怀感恩。", modern: "做对的事会赢得长期尊敬。", category: "family" },
+  { id: 89, title: "第八十九签 · 练习", ancient: "日日笃行，技自精熟。", modern: "重复训练会带来质的飞跃。", category: "study" },
+  { id: 90, title: "第九十签 · 情绪", ancient: "风生于心，静则无波。", modern: "管理情绪比一时冲动更重要。", category: "health" },
+  { id: 91, title: "第九十一签 · 机会到", ancient: "东风先到，花自盛开。", modern: "把握窗口期，准备好简短行动清单。", category: "career" },
+  { id: 92, title: "第九十二签 · 反省", ancient: "夜半灯下，心有所悟。", modern: "定期反省能节省很多弯路。", category: "general" },
+  { id: 93, title: "第九十三签 · 网络", ancient: "藤蔓相连，果自硕大。", modern: "人脉网络需要长期经营与互惠。", category: "business" },
+  { id: 94, title: "第九十四签 · 规避", ancient: "虚谷藏风，避其锋芒。", modern: "对明显风险要学会回避并保留实力。", category: "money" },
+  { id: 95, title: "第九十五签 · 温柔", ancient: "草木有情，风也柔和。", modern: "温和的沟通常常比强硬更有效。", category: "family" },
+  { id: 96, title: "第九十六签 · 创新", ancient: "破旧如瓦，新器生光。", modern: "小的创新积累会带来大的不同。", category: "career" },
+  { id: 97, title: "第九十七签 · 适合移动", ancient: "步随地形，行则自在。", modern: "若条件不佳，换环境可能更快成长。", category: "travel" },
+  { id: 98, title: "第九十八签 · 谨言慎行", ancient: "言行如磐，稳重为贵。", modern: "重要场合保持稳重，决定会更稳妥。", category: "general" },
+  { id: 99, title: "第九十九签 · 感恩", ancient: "心怀感念，岁月回甜。", modern: "记住感谢那些帮助过你的人。", category: "family" },
+  { id: 100, title: "第一百签 · 新始", ancient: "破晓初露，一切再始。", modern: "这是新的起点，带着学到的继续前行。", category: "general" }
+]
