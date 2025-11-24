@@ -19,4 +19,12 @@
 "@vitejs/plugin-react": "^4.3.1"
 }
 }
+{
+  "homepage": "https://github.com/erandesign/3d-sign-tube-app",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
+}
+
 ```
