@@ -20,11 +20,12 @@
 }
 }
 {
-  "homepage": "https://github.com/erandesign/3d-sign-tube-app",
+  "homepage": "https://erandesign.github.io/3d-sign-tube-app",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   }
 }
+
 
 ```
